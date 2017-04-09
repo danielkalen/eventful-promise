@@ -20,6 +20,7 @@
   "devDependencies": {
     "badge-gen": "^1.0.1",
     "chai": "^3.5.0",
+    "coffee-coverage": "^2.0.1",
     "mocha": "^3.2.0"
   },
   "dependencies": {
