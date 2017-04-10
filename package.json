@@ -1,6 +1,6 @@
 {
   "name": "eventful-promise",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create a Promise/EventEmitter hybrid that can emit events even after being resolved",
   "main": "index.js",
   "browser": "browser.js",
