@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "Create a Promise/EventEmitter hybrid that can emit events even after being resolved",
   "main": "index.js",
+  "browser": "browser.js",
   "mocha_opts": "-u tdd --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul --recursive --slow 1000 --timeout 5000",
   "scripts": {
-    "prepublish": "npm run test",
+    "prepublish": "npm run test && npm run build",
+    "build": "cat lib/eventful-promise.coffee | coffee -cbs --no-header > browser.js",
     "coverage": "npm run coverage:run && npm run coverage:badge",
     "coverage:run": "forCoverage=true istanbul cover --dir coverage node_modules/mocha/bin/_mocha -- $npm_package_mocha_opts",
     "coverage:badge": "badge-gen -d ./.config/badges/coverage",
