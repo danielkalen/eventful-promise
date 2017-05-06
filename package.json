@@ -3,11 +3,16 @@
   "version": "1.0.1",
   "description": "Create a Promise/EventEmitter hybrid that can emit events even after being resolved",
   "main": "index.js",
-  "browser": "browser.js",
-  "mocha_opts": "-u tdd --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul --recursive --slow 1000 --timeout 5000",
+  "browser": "lib/eventful-promise.coffee",
+  "browserify": {
+    "transform": [
+      "coffeeify"
+    ]
+  },
+  "mocha_opts": "-u tdd --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul --recursive --slow 1000 --timeout 5000 --bail",
   "scripts": {
-    "prepublish": "npm run test && npm run build",
-    "build": "cat lib/eventful-promise.coffee | coffee -cbs --no-header > browser.js",
+    "prepublishonly": "npm run test; npm run build",
+    "build": "simplyimport -i lib/eventful-promise.coffee -t coffeeify > browser.js",
     "coverage": "npm run coverage:run && npm run coverage:badge",
     "coverage:run": "forCoverage=true istanbul cover --dir coverage node_modules/mocha/bin/_mocha -- $npm_package_mocha_opts",
     "coverage:badge": "badge-gen -d ./.config/badges/coverage",
@@ -23,10 +28,12 @@
     "badge-gen": "^1.0.1",
     "chai": "^3.5.0",
     "coffee-coverage": "^2.0.1",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "simplyimport": "^3.5.8"
   },
   "dependencies": {
     "bluebird": "^3.5.0",
-    "coffee-script": "^1.12.4"
+    "coffee-register": "0.0.1",
+    "coffeeify": "^2.1.0"
   }
 }
