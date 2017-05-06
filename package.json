@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "bluebird": "^3.5.0",
-    "coffee-script": "^1.12.4"
+    "coffee-register": "0.0.1",
+    "coffeeify": "^2.1.0"
   }
 }
