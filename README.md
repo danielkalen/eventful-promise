@@ -61,11 +61,11 @@ console -> D
 
 #### Creation
 There are three ways you can create an eventful promise:
-Method      | Example
-------------|----------
-Callback    | `new EventfulPromise((resolve, reject)=> )`
-Thenable    | `new EventfulPromise(Promise.resolve('value'))`
-.resolve()  | `EventfulPromise.resolve('value').then(...)`
+Method       | Example
+------------ | ----------
+Callback     | `new EventfulPromise((resolve, reject)=> )`
+Thenable     | `new EventfulPromise(Promise.resolve('value'))`
+.resolve()   | `EventfulPromise.resolve('value').then(...)`
 
 
 #### Emitting events
