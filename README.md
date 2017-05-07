@@ -61,6 +61,7 @@ console -> D
 
 #### Creation
 There are three ways you can create an eventful promise:
+
 Method       | Example
 ------------ | ----------
 Callback     | `new EventfulPromise((resolve, reject)=> )`
