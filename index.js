@@ -1,3 +1,3 @@
-require('coffee-script/register');
+require('coffee-register');
 module.exports = require('./lib/eventful-promise');
 
