@@ -6,7 +6,7 @@
   "browser": "browser.js",
   "mocha_opts": "-u tdd --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul --recursive --slow 1000 --timeout 5000",
   "scripts": {
-    "prepublish": "npm run test && npm run build",
+    "prepublishOnly": "npm run test && npm run build",
     "build": "cat lib/eventful-promise.coffee | coffee -cbs --no-header > browser.js",
     "coverage": "npm run coverage:run && npm run coverage:badge",
     "coverage:run": "forCoverage=true istanbul cover --dir coverage node_modules/mocha/bin/_mocha -- $npm_package_mocha_opts",
