@@ -11,13 +11,8 @@
   },
   "mocha_opts": "-u tdd --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul --recursive --slow 1000 --timeout 5000 --bail",
   "scripts": {
-<<<<<<< HEAD
-    "prepublishOnly": "npm run test && npm run build",
-    "build": "cat lib/eventful-promise.coffee | coffee -cbs --no-header > browser.js",
-=======
     "prepublishonly": "npm run test; npm run build",
     "build": "simplyimport -i lib/eventful-promise.coffee -t coffeeify > browser.js",
->>>>>>> c2994f8d8fb3f2e131b687f7fbfd409ddf15e3b8
     "coverage": "npm run coverage:run && npm run coverage:badge",
     "coverage:run": "forCoverage=true istanbul cover --dir coverage node_modules/mocha/bin/_mocha -- $npm_package_mocha_opts",
     "coverage:badge": "badge-gen -d ./.config/badges/coverage",
